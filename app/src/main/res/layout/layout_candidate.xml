@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="bottom"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_600"
+        android:orientation="horizontal">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clDownload"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/firstPrediction">
+            <ProgressBar
+                android:id="@+id/pbDownload"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:elevation="@dimen/fab_padding"
+                app:layout_constraintTop_toTopOf="@+id/textDownload"
+                app:layout_constraintBottom_toBottomOf="@+id/textDownload"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/textDownload"
+                style="@style/Candidate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:autoSizeMaxTextSize="100sp"
+                android:background="@color/gray_600"
+                android:layout_marginStart="2dp"
+                android:gravity="left"
+                android:visibility="visible"
+                android:autoSizeMinTextSize="10sp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
+                android:maxLines="1"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnDownload"
+                tools:targetApi="o"
+                app:layout_constraintVertical_bias="1"
+                android:text="@string/translation_is_not_downloaded" />
+
+            <TextView
+                android:id="@+id/btnDownload"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="@string/download"
+                android:paddingHorizontal="@dimen/fab_padding"
+                android:background="@drawable/bg_translate_btn"
+                android:textColor="@color/yellow"
+                android:gravity="center"
+                android:textSize="18sp"
+                android:layout_weight="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.github.zagum.speechrecognitionview.RecognitionProgressView
+            android:id="@+id/animSpeak"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toEndOf="@id/btnTranslate"
+            app:layout_constraintEnd_toStartOf="@id/btnSpeechInput"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <ImageView
+            android:id="@+id/btnTranslate"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="0dp"
+            android:text="@string/translate"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:src="@drawable/a_to_b"
+            app:layout_constraintBottom_toBottomOf="@id/firstPrediction"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/firstPrediction"/>
+
+        <TextView
+            android:id="@+id/firstPrediction"
+            style="@style/Candidate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/gray_600"
+            android:layout_marginStart="2dp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:textColor="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/secondPrediction"
+            app:layout_constraintStart_toEndOf="@id/btnTranslate"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="o"
+            app:layout_constraintVertical_bias="1"
+            tools:text="First Prediction" />
+
+        <TextView
+            android:id="@+id/secondPrediction"
+            style="@style/Candidate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="100sp"
+            android:background="@color/gray_600"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeStepGranularity="1sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:textColor="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/thirdPrediction"
+            app:layout_constraintStart_toEndOf="@id/firstPrediction"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:targetApi="o"
+            app:layout_constraintVertical_bias="1"
+            tools:text="Second Prediction" />
+
+        <TextView
+            android:id="@+id/thirdPrediction"
+            style="@style/Candidate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeStepGranularity="1sp"
+            android:background="@color/gray_600"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
+            android:textColor="@color/yellow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnSpeechInput"
+            app:layout_constraintStart_toEndOf="@id/secondPrediction"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:targetApi="o"
+            tools:text="Third Prediction" />
+
+        <ImageView
+            android:id="@+id/btnSpeechInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/less_padding"
+            android:src="@drawable/mic"
+            android:background="@color/gray_600"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/thirdPrediction"
+            app:layout_constraintTop_toTopOf="parent" />
+
+<!--        <com.airbnb.lottie.LottieAnimationView-->
+<!--            android:id="@+id/animSpeak"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="0dp"-->
+<!--            app:lottie_loop="true"-->
+<!--            android:visibility="gone"-->
+<!--            app:lottie_autoPlay="true"-->
+<!--            android:scaleType="centerCrop"-->
+<!--            app:lottie_rawRes="@raw/speak_anim"-->
+<!--            android:background="@color/gray_700"-->
+<!--            android:layout_marginHorizontal="@dimen/extra_padding"-->
+<!--            app:layout_constraintStart_toEndOf="@id/btnTranslate"-->
+<!--            app:layout_constraintEnd_toStartOf="@id/btnSpeechInput"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</merge>
