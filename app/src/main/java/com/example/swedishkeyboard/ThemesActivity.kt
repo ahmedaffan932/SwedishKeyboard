@@ -81,7 +81,7 @@ class ThemesActivity : AppCompatActivity() {
             Misc.setTheme(this, 1)
             openKeyboard()
         }
-        binding.themeB.setOnClickListener {
+        binding.themeC.setOnClickListener {
             Misc.setTheme(this, 2)
             openKeyboard()
 
@@ -98,7 +98,6 @@ class ThemesActivity : AppCompatActivity() {
         }
         binding.themeF.setOnClickListener {
             Misc.setTheme(this, 5)
-
             openKeyboard()
         }
         binding.themeG.setOnClickListener {
@@ -358,8 +357,8 @@ class ThemesActivity : AppCompatActivity() {
                 binding.themeB
             }
             2 -> {
-                binding.themeB.foreground = mDrawableTheme
-                binding.themeB
+                binding.themeC.foreground = mDrawableTheme
+                binding.themeC
             }
             3 -> {
                 binding.themeD.foreground = mDrawableTheme

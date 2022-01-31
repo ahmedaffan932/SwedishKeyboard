@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:horizontalGap="1%p"
     android:keyWidth="9.1%p"
-
+    android:keyHeight="@dimen/key_height_small"
     android:verticalGap="1%p">
     <Row
         android:horizontalGap="1%p"
